@@ -1,0 +1,163 @@
+
+<!DOCTYPE HTML PUBLIC>
+<html>
+<head>
+<meta http-equiv="content-Type" content="text/html; utf-8" />
+<meta http-equiv="Pragma" content="cache" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta http-equiv="content-Language" content="en" />
+<meta name="description" content="Take the MMPI-2 Test online for free. With scoring and scales. Start Now" />
+<meta name="audience" content="all" />
+<title>MMPI-2 Test Free Online</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 1500px; /* Adding height to the body to enable scrolling */
+  }
+  img.sticky-image {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    max-width: calc(100% - 60px);
+    max-height: calc(100% - 60px);
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body>
+
+<!--[if IE]>
+<script type="text/javascript" src="excanvas.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="scales.js"></script>
+
+<script type="text/javascript" src="questions.js"></script>
+
+<script type="text/javascript" src="canvastext.js"></script>
+
+<script type="text/javascript" src="chart.js"></script>
+
+<script type="text/javascript" src="util.js"></script>
+
+<script type="text/javascript" src="score.js"></script>
+<script type="text/javascript">
+
+// ----- Global varibales -----
+// Tell JSLint about intentional global variables
+/*global questions, scales, rin, longform, gender, ans */
+
+longform=true;	// All questions or first 370
+gender=0;		// 0==male, 1==female
+chart_style=0;	// 0==fancy 1==plain
+ans=[];			// Answers to questions: [T,F,?]
+
+// Set the test gender - called by onclick() event in the form
+function set_gender(g)
+{
+	gender=g;
+}
+
+// Set the test length - called by onclick() event in the form
+function use_long_form(lf)
+{
+	longform=lf;
+	//longformdiv.style.visibility=longform?"visible":"hidden";
+	longformdiv.style.display=longform?"inline":"none";
+}
+
+// Set the chart style - called by onclick() event in the form
+function set_chart_style(cs)
+{
+	chart_style=cs;
+}
+
+// Write a single question to the HTML page
+function doc_write_question(name,text)
+{
+	document.write("<input type=\"radio\" name="+name+" value=\"F\">False&nbsp;");
+	document.write("<input type=\"radio\" name="+name+" value=\"T\">True&nbsp;");
+	document.write("&nbsp;&nbsp;"+text+"<br>");
+}
+
+// Write all question radio buttons and text to the HTML page - called from the HTML
+function doc_write_all_questions()
+{
+	for(var i=1; i < questions.length; ++i) {
+		doc_write_question("Q"+i,i+". "+questions[i]);
+		if(i===370) { document.write("<div id=\"longformdiv\">"); }
+	}
+	if(i>370) { document.write("<\/div>"); }
+}
+
+
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2814401-7");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+
+//alert("JavaScript Loaded");
+
+var ips = '87.123.193.139'.split('.');
+var ipn=[parseInt(ips[0],10),parseInt(ips[1],10),parseInt(ips[2],10),parseInt(ips[3],10)];
+//alert(ips[0] + "." + ips[1] + "." + ips[2] + "." + ips[3]);
+if(
+	(ipn[0]===159 && ipn[1]===182)
+	) {
+	document.write("<div style=\"display=none\">");
+	window.location="404.html";
+} else {
+	document.write("<div>");
+}
+
+</script>
+
+<!--[if IE]>
+<h2>Note: Scoring is <b>very</b> slow with Internet Explorer.<br>
+For much faster performance use <a href="http://www.apple.com/safari">Safari</a>, 
+<a href="http://www.google.com/chrome">Chrome</a>, 
+<a href="http://www.getfirefox.com">FireFox</a> or <a href="http://www.opera.com">Opera</a>.</h2>
+<![endif]-->
+<br><div style="text-align: center;"><h1><span style="font-family: Arial;">Take the Minnesota Multiphasic Personality Inventory (MMPI-2) Test online for free</span></h1><span style="font-family: Arial;"></span></div><br>
+<span style="font-family: Arial;"><h2>What is the MMPI-2?</h2>
+The Minnesota Multiphasic Personality Inventory (MMPI) is the most widely used and researched, standardized clinical assessment tool. It is used to help diagnose adult personality and mental health disorders.<br>
+Various versions of the MMPI are used by psychologists and other mental health experts to help develop treatment plans, aid with differential diagnosis, assist with legal inquiries (forensic psychology) or screen job applicants during the selection process.<br>
+The MMPI was originally created in the 1930s. The test has been updated and modified multible times to improve accuracy and validity.<br>
+<h3>How long does it take to complete the MMPI-2?</h3>
+The MMPI-2 consists of 567 true-false questions. It akes approximately 60 to 90 minutes to complete the test. The MMPI-2-RF has 338 true-false questions. Taking the MMPI-2-RF takes around 35 to 50 minutes. You can interpret your results by using the information <a href="http://www.scarletline.com/aglezerman/mmpiinter.html">provided here</a>.&nbsp; </span>
+<hr style="width: 100%; height: 2px;"><br style="font-family: Arial;">
+<p><form style="font-family: Arial;" name="config" action><p>
+<input name="gender" value="M" onclick="set_gender(0);" checked="checked" type="radio">Male&nbsp;
+<input name="gender" value="F" onclick="set_gender(1);" type="radio">Female<br>
+<input name="testform" value="L" onclick="use_long_form(true);" checked="checked" type="radio">Long Form&nbsp;
+<input name="testform" value="S" onclick="use_long_form(false);" type="radio">Short Form<br>
+<input name="chartstyle" value="0" onclick="set_chart_style(0);" checked="checked" type="radio">Fancy Charts&nbsp;
+<input name="chartstyle" value="1" onclick="set_chart_style(1);" type="radio">Plain Charts<br>
+</p></form>
+<h1 style="font-family: Arial;"><script type="text/javascript">document.write(questions[0]);</script></h1>
+<form style="font-family: Arial;" name="questions" action><p>
+<script type="text/javascript">doc_write_all_questions();</script>
+<br>
+<input value="Score" onclick="score_rb(document.forms.questions);" type="button">
+<br><br>
+</p></form>
+<form style="font-family: Arial;" name="anstext" action><p>
+<textarea id="ata" cols="76" rows="9"></textarea><br>
+<input value="Score" onclick="score_text(document.forms.anstext.ata.value);" type="button">
+<br><br>
+</p></form>
+
+<center><canvas id="canvasVCS" width="1" height="1"></canvas></center>
+<center><canvas id="canvasRCS" width="1" height="1"></canvas></center>
+<center><canvas id="canvasCSP" width="1" height="1"></canvas></center>
+<center><canvas id="canvasSS" width="1" height="1"></canvas></center>
+<center><canvas id="canvasPSY" width="1" height="1"></canvas></center>
+</body>
+</html>
